@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .bg-black {
+      background-color: #00000070;
+    }
+    .bg-gray{background-color: rgb(44, 34, 34);}
+    .text-gray-300{background-color:rgba(34, 32, 32, 0.432);}
+    .bg-gray-700{background-color: rgba(0, 0, 0, 0.973);}
+    .bg-login{color: rgba(245, 245, 245, 0.89);}
+  } 
+
+  
+
+@layer components{
+    .infoText{
+        @apply p-4 bg-black rounded-lg max-w-[300px]
+    }
+    .chatRow{
+      @apply rounded-lg px-5 py-3 text-sm flex items-center
+      justify-center space-x-2 hover:bg-gray-700 cursor-pointer
+      text-gray-300 transition-all duration-200 ease-out
+    }
+    .bglogin{
+      @apply bg-login
+    }
+    
+}
