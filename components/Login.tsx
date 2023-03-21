@@ -4,6 +4,9 @@ import Image from 'next/image'
 import { signIn } from 'next-auth/react'
 
 function Login() {
+  
+  
+  
   return (
     <div className='flex flex-col h-screen items-center bg-[#4c4d49d8]'>
       <Image src="/logo.jpg" alt="Assistant" width={200} height={100}/>

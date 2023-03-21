@@ -26,5 +26,8 @@
     .bglogin{
       @apply bg-login
     }
+    .newchatbg{
+      @apply bg-black
+    }
     
 }
