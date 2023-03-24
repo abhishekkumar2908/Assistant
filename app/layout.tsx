@@ -4,12 +4,13 @@ import {SessionProvider} from "../components/SessionProvider"
 import { getServerSession } from 'next-auth'
 import {authOptions} from "../pages/api/auth/[...nextauth]"
 import Login from '../components/Login'
+import ClientProvider from '../components/ClientProvider'
 
 export const metadata = {
   title: 'Assistant',
   description: 'This web app is using chatGPT Api',
 }
-
+// children prop is used to render the main cotent of each page within the layout.
 export default async function RootLayout({
   children,
 }: {
@@ -26,6 +27,8 @@ export default async function RootLayout({
                           md:min-w-[20rem]'>
             <SideBar/>
           </div>
+          {/* {Client provider - notification} */}
+          <ClientProvider/>
          
         <div className='bg-[#484950] flex-grow'>         
           {children}        
