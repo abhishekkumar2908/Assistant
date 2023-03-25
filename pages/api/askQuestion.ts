@@ -1,7 +1,7 @@
 import admin from 'firebase-admin';
-import { collection, query } from 'firebase/firestore';
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { adminDb } from '../../firebaseAdmin';
+import query from '../../lib/queryApi';
 
 type Data = {
   answer: string
@@ -34,14 +34,16 @@ export default async function handler(
         avatar: 'https://links.papareact.com/89k'
       }
     };
-
+//this adds into firestore database
     await adminDb
       .collection("users")
       .doc(session?.user?.email!)
       .collection("chats")
       .doc(chatid)
+      .collection("messages")
+      .add(message);
       
 
 
-  res.status(200).json({ name: 'John Doe' })
+  res.status(200).json({ answer: message.text })
 }

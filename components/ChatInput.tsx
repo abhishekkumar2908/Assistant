@@ -26,7 +26,7 @@ function ChatInput({chatid}:Props) {
     setPrompt("");
 
     //firestore-message
-    const message : Message={
+    const message: Message={
       text: input,
       createdAt: serverTimestamp(),
       user:{
@@ -45,13 +45,13 @@ function ChatInput({chatid}:Props) {
 
   //Toast Notification to say loading
   const notification= toast.loading("umm!...");
-  await fetch('api/askQuestion',{
+  await fetch('/api/askQuestion',{
     method: 'POST',
     headers:{
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      prompt: input, chatid, model, session
+      prompt: input, chatid, model, session,
     }),
   }).then(()=>{
 
